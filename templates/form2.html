@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <link rel="stylesheet" type="text/css" href="static/formStyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Survey form ui created for the FreeCodeCamp's Responsive Web Design Certification.">
+  <title>Survey Form</title>
+</head>
+
+<body>
+<div class="container">
+  <div class="header">
+    <div class="column-header">
+      <h1 id="title">Learner Experience Survey</h1>
+        <p id="description">We would like to know a little more about your experience with the course. Thank you for taking the time to help us improve the platform.</p>
+      </div>
+
+      <div class="column-image">
+        <div id="image-div">
+          <img src="static/images/survey_icon.svg" width="400" height="400" alt="Survey form icon">
+        </div>
+    </div>
+  </div>
+  
+  <form id="survey-form" action="{% url 'formpage2' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      
+    <div class="form-group">
+      <p>have you taken survey before?</p>
+      <label>
+        <input
+          name="user"
+          value="yes"
+          type="radio"
+          class="input-radio"
+    
+        />yes</label>
+      <label>
+        <input
+          name="user"
+          value="no"
+          type="radio"
+          class="input-radio"
+        />no
+      </label>
+
+      
+    </div>
+    
+    <div class="form-group">
+      <p>gender</p>
+      <label>
+        <input
+          name="gender"
+          value="male"
+          type="radio"
+          class="input-radio"
+        />Male</label>
+      <label>
+        <input
+          name="gender"
+          value="female"
+          type="radio"
+          class="input-radio"
+        />Female</label>
+
+    </div>
+    
+    <div class="form-group">
+      <label id="education-label" for="education">what is the highest level of education you do have?</label>
+      <input
+        type="education"
+        name="education"
+        id="education"
+        class="form-control"
+        placeholder="Education"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label id="city-label" for="city">Where did you grow up in pakistan</label>
+      <input
+        type="city"
+        name="city"
+        id="city"
+        class="form-control"
+        placeholder="Enter your City"
+        required
+      />
+    </div>
+  
+    
+    
+    <div class="form-group">
+      <p>Any comments or suggestions?</p>
+      <textarea
+        id="comments"
+        class="input-textarea"
+        name="comment"
+        placeholder="Enter your comment here..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" id="submit" class="submit-button">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+
+ <section class="footer">
+    <p> Design & Development - Foteini Savvidou </p>
+  </section>
+
+</body>
+
+</html>
